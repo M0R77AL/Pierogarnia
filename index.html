@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO básico: título e descrição que aparecem no Google -->
+  <title>Pierogarnia Lis</title>
+  <meta name="description" content="Pierogarnia Lis: Restaurante Culinária Tradicional Polonesa. Cardápio com receitas tradicionais polonesas, reservas pelo WhatsApp e localização.">
+  <link rel="canonical" href="https://www.pierogarnialis.pt">
+
+  <!-- Imagem de compartilhamento -->
+  <meta property="og:title" content="Pierogarnia Lis">
+  <meta property="og:description" content="Receitas tradicionais.">
+    <meta property="og:image" content="https://www.pierogarnialis.pt/img/logo.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon: -->
+  <link rel="icon" href="img/favicon.ico">
+
+  <!-- Fontes: Playfair Display para títulos, Inter para o texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--  CABEÇALHO FIXO ================= -->
+  <header class="topo" id="inicio">
+    <div class="topo-dentro">
+      <!-- LOGO: já está com a sua imagem. Para trocar depois,
+           basta substituir img/logo.jpg pela nova logo (mesmo nome). -->
+      <a class="logo" href="#inicio">
+        <img src="img/logo.jpg" alt="Pierogarnia Lis — logo com flores de wycinanki">
+      </a>
+
+      <button class="menu-botao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menuNav" class="nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a class="btn btn-pequeno" href="https://wa.me/554196348324" target="_blank" rel="noopener">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!--  ABERTURA  -->
+    <section class="hero">
+      <!-- Fundo floral de wycinanki  -->
+      <img class="hero-fundo" src="img/flores-padrao.jpg" alt="" aria-hidden="true">
+
+      <div class="hero-texto">
+        <p class="hero-saudacao">Witamy! Bem-vindos</p>
+        <h1>Pierogarnia Lis</h1>
+        <p class="hero-sub">
+          Restaurante Culinária Tradicional Polonesa!
+        </p>
+        <div class="hero-botoes">
+          <a class="btn" href="#cardapio">Ver cardápio</a>
+          <a class="btn btn-contorno" href="https://chat.whatsapp.com/Lye7KB7ViAXEdyOZao3cbA" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+              <!--  CARDÁPIO  -->
+           <section class="secao" id="cardapio">
+             <div class="secao-dentro">
+       
+               <!-- Cabeçalho decorativo do cardápio -->
+               <img class="cardapio-cabecalho" src="img/cabecalho-cardapio.png" alt="Cardápio — Pierogarnia Lis">
+       
+               <!-- Filtros -->
+               <div class="filtro-barra" role="group" aria-label="Filtrar cardápio">
+                 <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+                 <button class="filtro-btn" data-filtro="tradicionais">Tradicionais</button>
+                 <button class="filtro-btn" data-filtro="especiais">Especiais</button>
+                 <button class="filtro-btn" data-filtro="doces">Doces</button>
+                 <button class="filtro-btn" data-filtro="vegetariano">Vegetariano</button>
+                 <button class="filtro-btn" data-filtro="pratos">Pratos Feitos</button>
+                 <button class="filtro-btn" data-filtro="porcoes">Porções</button>
+                 <button class="filtro-btn" data-filtro="bebidas">Bebidas</button>
+               </div>
+                      <!--  PIEROGUES TRADICIONAIS ===== -->
+               <div class="menu-categoria" data-categoria-grupo="tradicionais">
+                 <h3 class="menu-categoria-titulo">Pierogues Tradicionais</h3>
+                 <ul class="menu-lista">
+                   <li>Batata com Requeijão</li>
+                   <li>Repolho azedo com batata</li>
+                   <li>Batata com Bacon</li>
+                 </ul>
+               </div>
+       
+               <!-- ===== PIEROGUES ESPECIAIS ===== -->
+               <div class="menu-categoria" data-categoria-grupo="especiais">
+                 <h3 class="menu-categoria-titulo">Pierogues Especiais</h3>
+                 <ul class="menu-lista">
+                   <li>Frango com Curry</li>
+                   <li>Batata-doce com carne moída picante</li>
+                   <li>Calabresa, palmito e milho verde</li>
+                 </ul>
+               </div>
+       
+               <!-- ===== PIEROGUES DOCES ===== -->
+               <div class="menu-categoria" data-categoria-grupo="doces">
+                 <h3 class="menu-categoria-titulo">Pierogues Doces</h3>
+                 <ul class="menu-lista">
+                   <li>Coco com doce de leite</li>
+                   <li>Requeijão doce com frutas vermelhas</li>
+                   <li>Abacaxi com chocolate</li>
+                 </ul>
+               </div>
+       
+               <!-- ===== PIEROGUE VEGETARIANO ===== -->
+               <div class="menu-categoria" data-categoria-grupo="vegetariano">
+                 <h3 class="menu-categoria-titulo">Pierogue Vegetariano</h3>
+                 <ul class="menu-lista">
+                   <li>Abobrinha com queijo</li>
+                 </ul>
+               </div>
+                
+               <!-- ===== SOBREMESA ===== -->
+               <div class="menu-categoria" data-categoria-grupo="doces">
+                 <h3 class="menu-categoria-titulo">Sobremesa</h3>
+                 <ul class="menu-lista">
+                   <li>Delícia gelada</li>
+                 </ul>
+               </div>
+       
+               <!-- ===== PRATO FEITO ===== -->
+               <div class="menu-categoria" data-categoria-grupo="pratos">
+                 <h3 class="menu-categoria-titulo">Prato Feito</h3>
+                 <ul class="menu-lista">
+                   <li>Golonka (joelho de porco)</li>
+                   <li>Aluske de preguiçoso + tatarka + mix de saladas + tilápia ou pernil</li>
+                   <li>Gołąbki (aluske) arroz + mix de saladas + tilápia ou pernil</li>
+                 </ul>
+               </div>
+       
+               <!-- PORÇÕES 400g  -->
+               <div class="menu-categoria" data-categoria-grupo="porcoes">
+                 <h3 class="menu-categoria-titulo">Porções 400g</h3>
+                 <ul class="menu-lista">
+                   <li>Porção de anel de cebola</li>
+                   <li>Porção de batata</li>
+                   <li>Tilápia</li>
+                   <li>Carne de frango empanada</li>
+                 </ul>
+               </div>
+       
+               <!-- BEBIDAS  -->
+               <div class="menu-categoria" data-categoria-grupo="bebidas">
+                 <h3 class="menu-categoria-titulo">Bebidas</h3>
+       
+                 <h4 class="menu-subtitulo">Chopp Pata Negra</h4>
+                 <ul class="menu-lista">
+                   <li>Pilsen puro malte 400 ml</li>
+                   <li>Chopp especial</li>
+                   <li>Cerveja 0</li>
+                   <li>Chopp litro — sabores e valores a consultar</li>
+                 </ul>
+       
+                 <h4 class="menu-subtitulo">Cervejas garrafa</h4>
+                 <ul class="menu-lista">
+                   <li>Diversos rótulos disponíveis</li>
+                 </ul>
+       
+                 <h4 class="menu-subtitulo">Sucos Integrais</h4>
+                 <ul class="menu-lista">
+                   <li>Laranja</li>
+                   <li>Uva</li>
+                 </ul>
+       
+                 <h4 class="menu-subtitulo">Água e Refrigerantes</h4>
+                 <ul class="menu-lista">
+                   <li>Água com gás</li>
+                   <li>Água sem gás</li>
+                   <li>Gasosa garrafa</li>
+                   <li>Coca-Cola — Guaraná lata</li>
+                 </ul>
+       
+                 <h4 class="menu-subtitulo">Doses e Destilados</h4>
+                 <ul class="menu-lista">
+                   <li>Dose de Vodka — sabores</li>
+                   <li>Whisky (dose 30 ml) — Johnnie Walker Red Label</li>
+                   <li>Whisky — Jack Daniel's</li>
+                   <li>Caipirinha cachaça</li>
+                   <li>Caipirinha Steinhaeger</li>
+                 </ul>
+       
+                 <h4 class="menu-subtitulo">Espumantes e Vinhos</h4>
+                 <ul class="menu-lista">
+                   <li>Don Silvestre Brut / Chile</li>
+                   <li>Ast / Fontana Fredda</li>
+                   <li>San Martin</li>
+                   <li>Prosecco Bruit Demi sec Moscatel</li>
+                   <li>Garibaldi Vero Bruit</li>
+                   <li>Aurira Moscatel</li>
+                 </ul>
+               </div>
+        <!-- Vitrine: duas fotos de pierogis (salgado e doce) -->
+                 <div class="cardapio-vitrine">
+                   <figure class="vitrine-item">
+           <img src="img/pierogi-salgado.jpg" alt="Pierogi salgado">
+                 </figure>
+                 <figure class="vitrine-item">
+                 <img src="img/pierogi-doce.jpg" alt="Pierogi doce">
+                  </figure>
+               </div>
+             </div>
+           </section>
+
+    <!-- ================= SOBRE (expandido com história) ================= -->
+    <section class="secao secao-creme" id="sobre">
+      <div class="sobre-inner">
+        <div class="sobre-texto">
+          <h2>Nossa história</h2>
+          <p>
+            A Pierogarnia Lis nasceu de uma receita de família e de uma vontade simples:
+            trazer para Itaiópolis um pouco da cultura. Cada massa é aberta
+            à mão, cada recheio é preparado no dia, e as flores de wycinanki que decoram
+            a nossa fachada contam um pouco dessa história.
+          </p>
+          <p>
+            Aqui você encontra pierogi salgados e doces, bebidas tradicionais e um lugar aconchegante
+            para ficar.
+          </p>
+
+          <!-- ===== BLOCO DE HISTÓRIA EXPANDIDO ===== -->
+          <div class="historia-bloco">
+            <h3>O que é um pierogi?</h3>
+            <p>
+              O pieróg (no plural: <em>pierogi</em>) é um dos símbolos da culinária polonesa.
+              É uma massa que pode ser cozida ou frita, com recheios salgados ou doces. A palavra vem de
+              <em>"pieróg"</em>, que significa "bolinho". Na Polônia, cada região tem
+              sua versão: que vai de recheios de carne a queijo, frutas silvestres, cogumelos e repolho.
+            </p>
+
+            <h3>Por que "Pierogarnia  Lis"?</h3>
+            <p>
+              Em polonês, <em>"Pierogarnia"</em> é o lugar onde se faz e vende pierogi
+              como "padaria" para pão, mas para pierogi. É um termo afetivo, usado por quem
+              cresceu com essa comida. Ao escolher esse nome, queremos dizer: aqui não é só
+              um restaurante, é uma casa de pierogi. E o <em>"Lis"</em> raposa em Tradução, é o sobrenome da nossa família.
+            </p>
+
+            <h3>A tradição das wycinanki</h3>
+            <p>
+              As flores coloridas que você vê no nosso logo, no interior do restaurante e no site são
+              <strong>wycinanki</strong> — recortes de papel tradicionais da Polônia,
+              especialmente das regiões de Kurpie e Łowicz. Antigamente, as mulheres recortavam
+              essas flores para decorar paredes, janelas e presentes de casamento. Cada flor
+              tinha um significado: rosas para amor, girassóis para sol e prosperidade,
+              tulipas para esperança.
+            </p>
+            <p>
+              Ao usar wycinanki, estamos conectando a comida com a arte popular polonesa.
+              duas tradições que, juntas, contam a história de um povo que valoriza a beleza
+              no cotidiano.
+            </p>
+
+            <h3>Nossa missão</h3>
+            <p>
+              Queremos que a Pierogarnia Lis seja um ponto de encontro entre a cultura
+              polonesa e a cidade de Itaiópolis no Alto Paraguaçu, a Capital Catarinense da Cultura Polonesa. Não só um lugar para comer bem, mas um espaço
+              onde você pode aprender sobre a tradição e levar um pedacinho da Polônia para casa.
+            </p>
+          </div>
+
+          <a class="btn" href="#contato">Fale conosco</a>
+        </div>
+           <img class="sobre-foto" src="img/fachada-wycinanki.jpg" alt="Pierogarnia Lis decorada com flores de wycinanki e o galo colorido">
+      </div>
+    </section>
+
+    <!--  FAIXA FLORAL -->
+    <section class="faixa-floral" aria-hidden="true">
+           <img src="img/flores-kit.png" alt="">
+    </section>
+
+    <!-- ================= LOCALIZAÇÃO ================= -->
+    <section class="secao" id="localizacao">
+      <div class="localizacao-grid">
+        <div class="mapa-caixa">
+                   <iframe
+         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7148.263090443813!2d-49.91668986441802!3d-26.38693745839529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ddfbdf0669b1c9%3A0x3bc6eae2b5d0c7f1!2sPierogarnia_Lis!5e0!3m2!1spt-BR!2sbr!4v1789619558436!5m2!1spt-BR!2sbr" width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+           ></iframe>
+        </div>
+        <div class="localizacao-info">
+          <h2>Onde estamos</h2>
+          <address>
+                        R. Alfredo Schneder, 1536<br>
+            Paraguaçu, Itaiópolis - SC, 89340-000
+          </address>
+          <ul class="horarios">
+            <li><span>Segunda a Quinta</span> fechado</li>
+            <li><span>Sexta</span>Somente sob Reserva!</li>
+            <li><span>Sábado</span> 15h às 22h</li>
+            <li><span>Domingo</span> 12h às 15h</li>
+          </ul>
+          <p>
+           
+            Tel: +55 41 9634-8324<br>
+            
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--  CONTATO  -->
+    <section class="secao secao-creme" id="contato">
+      <div class="contato-grid">
+        <div class="contato-form-caixa">
+          <h2>Fale com a gente</h2>
+          <p class="secao-sub">Reservas, encomendas para eventos.</p>
+
+          <form id="formContato" novalidate>
+            <div class="campo">
+              <label for="nome">Nome *</label>
+              <input type="text" id="nome" name="nome" required autocomplete="name" placeholder="Seu nome">
+              <small class="erro-msg" hidden></small>
+            </div>
+            <div class="campo">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="voce@exemplo.com">
+              <small class="erro-msg" hidden></small>
+            </div>
+            <div class="campo">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="+0479 ...">
+            </div>
+            <div class="campo">
+              <label for="assunto">Assunto</label>
+              <select id="assunto" name="assunto">
+                <option value="reserva">Reserva de mesa</option>
+                <option value="encomenda">Encomenda / evento</option>
+                <option value="duvida">Dúvida sobre o cardápio</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="mensagem">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Escreva aqui..."></textarea>
+              <small class="erro-msg" hidden></small>
+            </div>
+            <button type="submit" class="btn">Enviar mensagem</button>
+            <p class="form-sucesso" role="status" hidden>
+              Obrigado! Sua mensagem foi registrada. Em breve respondemos — ou chame direto no WhatsApp.
+            </p>
+          </form>
+        </div>
+
+        <div class="contato-social">
+          <h2>Siga a gente</h2>
+          <ul class="social-lista">
+            <li><a href="https://www.instagram.com/Pierogarnia_lis/" target="_blank" rel="noopener">Instagram @Pierogarnia_lis</a></li>
+                     </ul>
+
+          <!--  LINKS DE WHATSAPP  -->
+          <div class="whatsapp-links">
+            <h3>WhatsApp</h3>
+            <p>
+                           <a href="+55 41 9634-8324" target="_blank" rel="noopener">
+                💬 Mensagem direta
+              </a>
+            </p>
+            <p>
+                            <a href="https://chat.whatsapp.com/Lye7KB7ViAXEdyOZao3cbA" target="_blank" rel="noopener">
+                👥 Entrar no grupo
+              </a>
+            </p>
+          </div>
+
+          <p class="contato-dica">
+            Prefere mensagem? O botão verde flutuante leva direto pro nosso WhatsApp.
+          </p>
+          <!-- A logo de novo, como cartão de visita -->
+          <img class="contato-logo" src="img/logo.jpg" alt="Logo da Pierogarnia Lis">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--  RODAPÉ  -->
+  <footer class="rodape">
+    <div class="rodape-dentro">
+      <p>Pierogarnia_Lis</p>
+      <p>&copy; <span id="ano">2026</span> Pierogarnia Lis. Todos os Direitos Reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/554196348324" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+      <path fill="#fff" d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.3c1.5.8 3.1 1.2 4.7 1.2 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.6c-1.5 0-3-.4-4.3-1.1l-.3-.2-4.3 1.4 1.4-4.2-.2-.3c-1-1.5-1.5-3.2-1.5-5 0-5.3 4.4-9.6 9.7-9.6s9.7 4.3 9.7 9.6-4.5 9.4-9.9 9.4zm5.3-7c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1c-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
