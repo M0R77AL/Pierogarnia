@@ -1,0 +1,570 @@
+/*   PIEROGARNIA LIS — css/style.css
+   Paleta inspirada em wycinanki (recortes poloneses):
+   vermelho, verde, amarelo sobre fundo creme.
+  */
+
+:root {
+  --vermelho: #c0392b;
+  --verde: #27ae60;
+  --amarelo: #f39c12;
+  --creme: #fdf6ec;
+  --tinta: #2d2a26;        /* cor do texto */
+  --tinta-suave: #6b6459;  /* texto secundário */
+  --branco: #ffffff;
+  --sombra: 0 4px 14px rgba(45, 42, 38, 0.10);
+  --raio: 14px;
+}
+
+/*  2. REINÍCIO (zera margens e padding dos navegadores)  */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--tinta);
+  background: var(--creme);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+/* Títulos com a fonte decorativa */
+h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+
+/*  3. BOTÕES */
+.btn {
+  display: inline-block;
+  background: var(--vermelho);
+  color: var(--branco);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid var(--vermelho);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn:hover { background: #a93226; transform: translateY(-2px); }
+
+.btn-contorno {
+  background: transparent;
+  color: var(--vermelho);
+}
+.btn-contorno:hover { background: var(--vermelho); color: var(--branco); }
+
+.btn-pequeno { padding: 0.45rem 1.1rem; font-size: 0.9rem; }
+
+/*  4. CABEÇALHO FIXO  */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(253, 246, 236, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(45, 42, 38, 0.08);
+}
+.topo-dentro {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.7rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo img {
+  height: 64px;
+  width: auto;
+  border-radius: 8px;
+}
+
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  list-style: none;
+}
+.nav a:not(.btn) {
+  color: var(--tinta);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav a:not(.btn):hover { color: var(--vermelho); }
+
+
+.menu-botao {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.menu-botao span {
+  width: 26px;
+  height: 3px;
+  background: var(--tinta);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+/* Estado "X" quando o menu está aberto */
+.menu-botao.aberto span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-botao.aberto span:nth-child(2) { opacity: 0; }
+.menu-botao.aberto span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---------- 5. ABERTURA (HERO) com fundo floral ---------- */
+.hero {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.25rem;
+  overflow: hidden;
+}
+
+/* A imagem de flores de wycinanki cobrindo o hero, esmaecida atrás do texto */
+.hero-fundo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+  z-index: 0;
+}
+/* Véu claro por cima para o texto continuar legível */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(253,246,236,0.75) 0%, rgba(253,246,236,0.35) 70%);
+  z-index: 1;
+}
+
+.hero-texto { max-width: 640px; position: relative; z-index: 2; }
+
+.hero-saudacao {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+  color: var(--verde);
+  font-weight: 600;
+}
+.hero h1 {
+  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  margin: 0.4rem 0 1rem;
+}
+.hero-sub { color: var(--tinta-suave); font-size: 1.1rem; margin-bottom: 1.8rem; }
+.hero-botoes { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- 6. SEÇÕES (estrutura comum) ---------- */
+.secao { padding: 4.5rem 1.25rem; }
+.secao-creme { background: var(--creme); }
+.secao-dentro { max-width: 1100px; margin: 0 auto; }
+.secao h2 { font-size: 2.2rem; text-align: center; margin-bottom: 0.5rem; }
+.secao-sub { text-align: center; color: var(--tinta-suave); margin-bottom: 2.2rem; }
+
+/* ---------- 7. CARDÁPIO ---------- */
+
+/* Cabeçalho decorativo do cardápio (imagem do PDF) */
+.cardapio-cabecalho {
+  display: block;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto 2.5rem;
+}
+/* Vitrine de pierogi (salgado + doce) */
+.cardapio-vitrine {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 820px;
+  margin: 0 auto 3rem;
+}
+
+.vitrine-item {
+  background: var(--branco);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.15s ease;
+}
+.vitrine-item:hover {
+  transform: translateY(-4px);
+}
+
+.vitrine-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.vitrine-item figcaption {
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: var(--vermelho);
+  font-size: 1.1rem;
+  background: var(--branco);
+}
+
+/* No celular, empilha as duas imagens */
+@media (max-width: 768px) {
+  .cardapio-vitrine {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .vitrine-item img { height: 200px; }
+}
+/* Barra de filtros centralizada */
+.filtro-barra {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0 auto 3rem;
+  max-width: 760px;
+}
+.filtro-btn {
+  background: var(--branco);
+  border: 2px solid rgba(45, 42, 38, 0.15);
+  color: var(--tinta);
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.filtro-btn:hover { border-color: var(--vermelho); color: var(--vermelho); }
+.filtro-btn.ativo {
+  background: var(--vermelho);
+  border-color: var(--vermelho);
+  color: var(--branco);
+  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.25);
+}
+
+/* Categorias do cardápio — centralizadas */
+.menu-categoria {
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid rgba(45, 42, 38, 0.12);
+  text-align: center;
+}
+.menu-categoria:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.menu-categoria-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  color: var(--vermelho);
+  margin: 0 0 1.2rem;
+  display: inline-block;
+  position: relative;
+}
+.menu-categoria-titulo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--amarelo);
+  margin: 0.6rem auto 0;
+  border-radius: 3px;
+}
+
+.menu-subtitulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--verde);
+  margin: 1.6rem 0 0.6rem;
+  text-align: center;
+}
+
+.menu-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 560px;
+}
+.menu-lista li {
+  padding: 0.65rem 0;
+  border-bottom: 1px dashed rgba(45, 42, 38, 0.15);
+  color: var(--tinta);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.menu-lista li:last-child { border-bottom: none; }
+
+/*  8. SOBRE   */
+.sobre-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.sobre-texto h2 { text-align: left; margin-bottom: 1rem; }
+.sobre-texto p { color: var(--tinta-suave); margin-bottom: 1rem; }
+.sobre-texto .btn { margin-top: 0.6rem; }
+.sobre-foto { height: 340px; border-radius: var(--raio); box-shadow: var(--sombra); }
+
+.historia-bloco {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+.historia-bloco h3 {
+  color: var(--vermelho);
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+.historia-bloco h3:first-child { margin-top: 0; }
+.historia-bloco p {
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+.historia-bloco em {
+  font-style: italic;
+  color: var(--tinta);
+}
+.historia-bloco strong {
+  color: var(--tinta);
+}
+
+/*  10. FAIXA FLORAL  */
+.faixa-floral {
+  overflow: hidden;
+  line-height: 0;
+  border-top: 6px solid var(--vermelho);
+  border-bottom: 6px solid var(--verde);
+}
+.faixa-floral img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*  11. LOCALIZAÇÃO  */
+.localizacao-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+.mapa-caixa iframe {
+  width: 100%;
+  height: 380px;
+  border: 0;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+.localizacao-info h2 { text-align: left; margin-bottom: 1rem; }
+.localizacao-info address { font-style: normal; margin-bottom: 1.2rem; }
+
+.horarios { list-style: none; margin-bottom: 1.2rem; }
+.horarios li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed rgba(45, 42, 38, 0.15);
+}
+.horarios li span:first-child { font-weight: 600; }
+
+/*  12. CONTATO  */
+.contato-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.contato-form-caixa h2 { text-align: left; }
+.contato-form-caixa .secao-sub { text-align: left; margin-bottom: 1.6rem; }
+
+.campo { margin-bottom: 1.1rem; }
+.campo label { display: block; font-weight: 600; margin-bottom: 0.35rem; font-size: 0.95rem; }
+.campo input, .campo select, .campo textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 2px solid rgba(45, 42, 38, 0.15);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--branco);
+  transition: border-color 0.15s ease;
+}
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+  outline: none;
+  border-color: var(--verde);
+}
+.campo.com-erro input, .campo.com-erro textarea { border-color: var(--vermelho); }
+.erro-msg { color: var(--vermelho); font-size: 0.85rem; }
+
+.form-sucesso {
+  margin-top: 1rem;
+  background: rgba(39, 174, 96, 0.12);
+  border: 1px solid var(--verde);
+  color: #1e7e46;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+}
+
+.social-lista { list-style: none; margin-bottom: 1.4rem; }
+.social-lista a {
+  display: block;
+  padding: 0.6rem 0;
+  color: var(--tinta);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px dashed rgba(45, 42, 38, 0.15);
+}
+.social-lista a:hover { color: var(--vermelho); }
+
+/* Links de WhatsApp (individual + grupo) */
+.whatsapp-links {
+  margin-bottom: 1.4rem;
+  padding: 1rem;
+  background: rgba(37, 211, 102, 0.08);
+  border-radius: 10px;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+}
+.whatsapp-links h3 {
+  color: #128C7E;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+.whatsapp-links p {
+  margin-bottom: 0.5rem;
+}
+.whatsapp-links a {
+  color: #128C7E;
+  text-decoration: none;
+  font-weight: 600;
+}
+.whatsapp-links a:hover {
+  text-decoration: underline;
+}
+
+.contato-dica { color: var(--tinta-suave); font-size: 0.95rem; }
+
+/* Logo como cartão de visita na lateral do contato */
+.contato-logo {
+  width: 180px;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+}
+
+/*  13. RODAPÉ  */
+.rodape {
+  background: var(--tinta);
+  color: rgba(253, 246, 236, 0.85);
+  text-align: center;
+  padding: 1.8rem 1.25rem;
+  font-size: 0.9rem;
+}
+.rodape-dentro p + p { margin-top: 0.3rem; opacity: 0.7; }
+
+/*  14. BOTÃO FLUTUANTE DO WHATSAPP  */
+.whatsapp-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 90;
+  width: 58px;
+  height: 58px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55); }
+
+/* RESPONSIVO — telas menores */
+
+/* Tablets e notebooks pequenos */
+@media (max-width: 1024px) {
+  .sobre-inner, .localizacao-grid, .contato-grid { grid-template-columns: 1fr; }
+  .sobre-foto { height: 280px; }
+  .mapa-caixa iframe { height: 320px; }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .menu-botao { display: flex; }
+
+  /* O menu vira um painel que desce por cima da página */
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--creme);
+    border-bottom: 1px solid rgba(45, 42, 38, 0.1);
+    box-shadow: var(--sombra);
+    display: none;
+  }
+  .nav.aberto { display: block; }
+  .nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.6rem 1.25rem 1rem;
+  }
+  .nav li { border-bottom: 1px dashed rgba(45, 42, 38, 0.1); }
+  .nav li:last-child { border-bottom: none; }
+  .nav a:not(.btn) { display: block; padding: 0.8rem 0; }
+  .nav .btn { margin-top: 0.6rem; text-align: center; }
+
+  .logo img { height: 52px; }
+  .hero { min-height: 70vh; }
+  .hero-fundo { opacity: 0.22; }
+
+  .secao { padding: 3rem 1.25rem; }
+  .secao h2 { font-size: 1.8rem; }
+  .faixa-floral img { height: 140px; }
+  .contato-logo { width: 140px; }
+
+  /* Cardápio no celular */
+  .cardapio-cabecalho { max-width: 100%; margin-bottom: 1.8rem; }
+  .menu-categoria { margin-bottom: 2rem; padding-bottom: 1.5rem; }
+  .menu-categoria-titulo { font-size: 1.45rem; }
+  .menu-subtitulo { font-size: 1.05rem; }
+  .menu-lista li { font-size: 0.95rem; }
+  .filtro-btn { padding: 0.45rem 1rem; font-size: 0.85rem; }
+}
+
+/*Acessibilidade: quem prefere menos movimento  */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .prato, .whatsapp-float { transition: none; }
+}
